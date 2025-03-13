@@ -170,7 +170,7 @@ image__brightness__saturate {
   font-variation-settings: "wght" 400, "wdth" 110, "opsz" 0;
   font-size: 18px;
   line-height: 100%;
- /* text-shadow: 2px 3px 3px rgb(0 0 0 / 0.3) В Тз к проекту сказано добавить тень тексту, а в макете тени у текста нет, поэтому свойство дал, но закомментировал*/;
+ /* text-shadow: 2px 3px 3px rgb(0 0 0 / 0.3); В ТЗ к проекту сказано добавить тень тексту, а в макете тени у текста нет, поэтому свойство дал, но закомментировал*/
   padding-inline: 10px;
   margin-top: 15px;
   margin-left: 10px;
@@ -448,7 +448,7 @@ image__brightness__saturate {
   .card__content {
   padding-bottom: 37px;
   }
-  
+
   .card__image__label {
   inset-inline-end: 10px;
   }
@@ -461,5 +461,6 @@ image__brightness__saturate {
   }
  
 .footer__button {
-  flex-direction: column;}
+  flex-direction: column;
+}
 }
