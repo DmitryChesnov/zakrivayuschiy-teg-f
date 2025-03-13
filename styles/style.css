@@ -15,7 +15,7 @@
   min-block-size: 100dvb;
   font-family: var(--main-font, "Inter-Variable"), "Arial", sans-serif;
   font-variation-settings: "wght" var(--card-font-weight, 400);
-  background-image: var(--gradient-image);
+  background-color: var(--background-color);
   background-size: cover;
 }
 
@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: start;
   border: 2px solid var(--accent-color);
-  background-image: url(../images/background.png);
+  background-image: var(--gradient-image);
   /* z-index: -1;*/
   width: min(100%, 100%);
   height: 960px;
@@ -76,14 +76,9 @@
   display: flex;
   flex-direction: column;
   width: min(100%, 696px);
-  height: max(959px);
   border: 2px, solid, var(--accent-color);
   background-color: #fff;
   z-index: 1;
-}
-
-li:nth-child(2) {
-  height: max(1001px);
 }
 
 .card__title {
@@ -91,7 +86,6 @@ li:nth-child(2) {
   font-variation-settings: "wght" 700, "wdth" 110, "opsz" 0;
   font-size: 18px;
   line-height: 100%;
-  height: 26px;
   padding-inline: 8px;
   margin-top: 4px;
 }
@@ -107,8 +101,8 @@ li:nth-child(2) {
   inline-size: 100%;
   outline: 2px solid var(--accent-color);
   outline-offset: -2px;
-  display: inline-block;
-  height: 696px;
+  aspect-ratio: 1 / 1;
+  margin-top: 8px;
 }
 
 .image__sepia {
@@ -135,6 +129,10 @@ image__brightness__saturate {
   filter: invert(0.75);
 }
 
+.image__blur {
+  filter: blur(0.6)
+}
+
 .card__image__label {
   position: absolute;
   opacity: 0.6;
@@ -147,8 +145,8 @@ image__brightness__saturate {
     -1px 0 0 var(--background-color), -1px 0 0 var(--background-color),
     0 -1px 0 var(--background-color), 0 -1px 0 var(--background-color);
   mix-blend-mode: hard-light;
-  inset-inline-end: 10px;
-  inset-block-start: 20px;
+  inset-inline-end: 23px;
+  inset-block-start: 35px;
 }
 
 @supports (
@@ -164,6 +162,7 @@ image__brightness__saturate {
 .card__content {
   margin-top: 16px;
   margin-left: 2px;
+  padding-bottom: 25px;
 }
 
 .card_paragraph {
@@ -171,9 +170,10 @@ image__brightness__saturate {
   font-variation-settings: "wght" 400, "wdth" 110, "opsz" 0;
   font-size: 18px;
   line-height: 100%;
-  text-shadow: 2px 3px 3px rgb(0 0 0 / 0.3);
+ /* text-shadow: 2px 3px 3px rgb(0 0 0 / 0.3) В Тз к проекту сказано добавить тень тексту, а в макете тени у текста нет, поэтому свойство дал, но закомментировал*/;
   padding-inline: 10px;
-  margin: 10px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 .card__like__heart {
@@ -183,25 +183,29 @@ image__brightness__saturate {
   justify-content: flex-end;
   margin-right: 23px;
   margin-top: 17px;
+  gap: 2px;
 }
 
 .card__icon-button {
-  border: 2px solid transparent;
-  padding: 0 4px 0 0;
-  background-color: transparent;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
+  border: 2px solid var(--background-color);
+  padding: 4px;
+  transition: border-color 0.3s ease;
   cursor: pointer;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  background-color: var(--background-color);
 }
 
 .card__icon-button:focus {
   outline: none;
+  border-color: var(--accent-color, #000);
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--accent-color, #000);
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
+  border-color: var(--accent-color, #000);
 }
 
 .sparks {
@@ -294,19 +298,21 @@ image__brightness__saturate {
   padding: 0;
   background-color: var(--background-color, #fff);
   cursor: pointer;
+  overflow: hidden;
 }
 
 .button:focus {
   outline: none;
-  box-shadow: 2px 2px 0px var(--accent-color);
+  box-shadow: 2px 2px 0px var(--main-color);
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.button:hover::after {
-  transform: scale(1);
+.button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--main-color, #000);
+  transition-duration: 0.3s;
 }
 
-.button::after {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -317,13 +323,8 @@ image__brightness__saturate {
   transform-origin: left center;
 }
 
-.button:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--main-color, #000);
-  transition-duration: 0.3s;
-}
-
-.button:hover::after {
-  transform: scale(1);
+.button:hover::before {
+  transform: scaleX(1);
 }
 
 .button__text {
@@ -366,7 +367,7 @@ image__brightness__saturate {
 
 .footer__button {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 8px;
   width: 100%;
@@ -386,7 +387,7 @@ image__brightness__saturate {
   position: relative;
   z-index: 2;
   color: var(--background-color);
-  block-size: 28px;
+  block-size: 21px;
   inline-size: auto;
   mix-blend-mode: difference;
 }
@@ -444,13 +445,21 @@ image__brightness__saturate {
   .card-list {
     margin-top: -432px;
   }
-  .card__title {
-    height: max(54px);
+  .card__content {
+  padding-bottom: 37px;
   }
+  
+  .card__image__label {
+  inset-inline-end: 10px;
+  }
+
   .card__image {
-    height: 375px;
+    height: min (100%, 375px);
   }
-  .card {
-    max-height: 844px;
+  .card_paragraph {
+  padding-inline: 12px;
   }
+ 
+.footer__button {
+  flex-direction: column;}
 }
