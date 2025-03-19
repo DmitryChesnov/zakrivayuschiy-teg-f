@@ -356,8 +356,8 @@
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
-  position: relative; 
-  top: -4px; 
+  position: relative;
+  top: -4px;
 }
 
 .modal__button {
@@ -438,11 +438,10 @@
 /*При рекомендованном в ТЗ медиавыражении <=375px сайт начинает меняться при ширине 374px. 
 На этой ширине провел сравнение с макетом в PP*/
 @media (width <= 375px) {
-  
   .logo__title {
-   padding-top: 120px;
-   padding-bottom: 120px;
-   margin-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    margin-bottom: 100px;
   }
 
   .card__title {
@@ -480,9 +479,10 @@
   }
 
   .card__icon-button {
-  position: relative;
-  top: -3px;
+    position: relative;
+    top: -3px;
   }
+
   .footer__button {
     flex-direction: column;
     max-inline-size: 310px;
