@@ -25,7 +25,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 960px; /* Высота градиента */
+  height: 100vh; /* Высота градиента */
   background-image: var(--gradient-image);
   z-index: 1;
 }
@@ -103,10 +103,9 @@
   display: block;
   inline-size: 100%;
   outline: 2px solid var(--accent-color);
-  outline-offset: -2px;
   aspect-ratio: 1 / 1;
   margin-top: 8px;
-  margin-bottom: 1px;
+  margin-bottom: 11px;
 }
 
 .image__sepia {
@@ -164,8 +163,7 @@
 }
 
 .card__content {
-  margin-top: 16px;
-  margin-left: 2px;
+  padding: 20px;
   padding-bottom: 25px;
 }
 
@@ -175,19 +173,20 @@
   font-size: 18px;
   line-height: 120%;
   /* text-shadow: 2px 3px 3px rgb(0 0 0 / 0.3); В ТЗ к проекту сказано добавить тень тексту, а в макете тени у текста нет, поэтому свойство дал, но закомментировал*/
-  padding-inline: 10px;
-  margin-top: 15px;
-  margin-left: 10px;
-  margin-bottom: 25px;
+  margin-top: 26px;
+  margin-left: 3px;
+}
+
+.card_paragraph:first-child {
+  margin-top: 0;
 }
 
 .card__like__heart {
   display: flex;
   margin-inline: auto 0;
-  max-block-size: 38px;
   justify-content: flex-end;
-  margin-right: 23px;
-  margin-top: 12px;
+  margin-top: 25px;
+  margin-right: 2px;
   gap: 2px;
 }
 
@@ -370,7 +369,7 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 11px 0;
+  padding: 12px 0;
   text-align: center;
   background-color: transparent;
   margin: 50px auto 0;
@@ -432,39 +431,54 @@
 .dialog::backdrop {
   background-color: rgb(0 0 0 / 75%);
 }
-
-@media (width < 375px) {
+/*При рекомендованном в ТЗ медиавыражении <=375px сайт начинает меняться при ширине 374px. 
+На этой ширине провел сравнение с макетом в PP*/
+@media (width <= 375px) {
+  
   .logo__title {
-    height: 327px;
+   padding-top: 120px;
+   padding-bottom: 120px;
+   margin-bottom: 100px;
   }
 
   .card__title {
     padding-inline: 10px;
-    line-height: 110%;
+    line-height: 120%;
   }
 
-  .card_paragraph {
-    padding-inline: 12px;
-    margin-top: 10px;
-    margin-right: 15px;
-  }
-
-  .card__content {
-    padding-bottom: 22px;
+  .card__image {
+    margin-bottom: 6px;
   }
 
   .card__image__label {
     inset-inline-end: 10px;
+    inset-block-start: 29px;
   }
 
-  .card__image {
-    height: min (100%, 375px);
+  .card_paragraph {
+    padding-inline: 0px;
+    margin-top: 10px;
+    margin-right: 5px;
+    line-height: 117%;
+    margin-left: 5px;
+  }
+
+  .card_paragraph_mobile {
+    margin-top: 30px;
+  }
+  .card_paragraph_mobile_strategy {
+    margin-top: 7px;
+  }
+  
+  .card__content {
+    padding-bottom: 22px;
   }
 
   .footer__button {
     flex-direction: column;
     max-inline-size: 310px;
-    gap: 13px;
+    padding: 15px 20px;
+    gap: 8px;
   }
 
   .footer__button-image {
