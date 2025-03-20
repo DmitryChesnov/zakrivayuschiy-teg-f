@@ -360,7 +360,7 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
   margin: 50px auto 0;
   max-inline-size: 336px;
@@ -469,14 +469,10 @@
     flex-direction: column;
     max-inline-size: 310px;
     padding: 15px 20px;
-    gap: 8px;
+    gap: 10px;
   }
 
   .footer__button-image {
     block-size: 28px;
-  }
-
-  .dialog {
-    top: 5px;
   }
 }
