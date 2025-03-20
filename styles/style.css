@@ -185,7 +185,7 @@
   display: flex;
   margin-inline: auto 0;
   justify-content: flex-end;
-  margin-top: 25px;
+  margin-top: 24px;
   margin-right: 4px;
   gap: 0px;
 }
@@ -201,8 +201,6 @@
   justify-content: center;
   height: 38px;
   background-color: var(--background-color);
-  position: relative;
-  top: -3px;
 }
 
 .card__icon-button:focus {
@@ -356,8 +354,6 @@
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
-  position: relative;
-  top: -4px;
 }
 
 .modal__button {
@@ -391,7 +387,9 @@
 
 .dialog {
   position: fixed;
-  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid var(--accent-color);
   padding: 32px 42px;
   color: var(--accent-color);
@@ -403,7 +401,7 @@
   background-color: var(--background-color);
   transition: opacity 0.3s ease-in-out;
   max-inline-size: 350px;
-  top: 132px;
+  top: 163px;
 }
 
 .dialog__form {
