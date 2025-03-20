@@ -20,17 +20,6 @@
   font-variation-settings: "wght" var(--card-font-weight, 400);
   margin-bottom: 103px;
 }
-/* 
-.page::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh; /* Высота градиента 
-  background-image: var(--gradient-image);
-  z-index: 1;
-} */
 
 .logo__title {
   position: relative;
@@ -107,7 +96,7 @@
   outline: 2px solid var(--accent-color);
   aspect-ratio: 1 / 1;
   margin-top: 8px;
-  margin-bottom: 11px;
+  margin-bottom: 12px;
 }
 
 .image__sepia {
@@ -469,16 +458,11 @@
   }
 
   .card_paragraph_mobile_strategy {
-    margin-top: 7px;
+    margin-top: 13px;
   }
 
   .card__content {
     padding-bottom: 22px;
-  }
-
-  .card__icon-button {
-    position: relative;
-    top: -3px;
   }
 
   .footer__button {
@@ -491,6 +475,7 @@
   .footer__button-image {
     block-size: 28px;
   }
+
   .dialog {
     top: 5px;
   }
