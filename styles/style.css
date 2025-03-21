@@ -63,7 +63,7 @@
   gap: 50px;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  margin-bottom: -5px;
 }
 
 .card {
@@ -360,10 +360,10 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 0;
   text-align: center;
   margin: 50px auto 0;
-  max-inline-size: 336px;
+  max-inline-size: 338px;
 }
 
 .footer__button-image {
@@ -429,6 +429,10 @@
     padding-top: 120px;
     padding-bottom: 120px;
     margin-bottom: 100px;
+  }
+
+  .card-list {
+    margin-bottom: 0;
   }
 
   .card__title {
